@@ -1,5 +1,6 @@
 # insper.cloud.projeto
 
+## CADASTRO
 ```mermaid
 sequenceDiagram
     autonumber
@@ -14,7 +15,7 @@ sequenceDiagram
     App-->>-Alice: retorna JWT Token
 ````
 
-
+## LOGIN
 ```mermaid
 sequenceDiagram
     autonumber
@@ -32,6 +33,7 @@ sequenceDiagram
 
 ```
 
+## DADOS
 ```mermaid
 sequenceDiagram
     autonumber
@@ -51,6 +53,7 @@ sequenceDiagram
     App-->>-Alice: retorna dados
 ```
 
+## Docker Compose
 ```mermaid
 flowchart LR
   subgraph docker compose
