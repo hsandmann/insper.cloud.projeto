@@ -45,11 +45,6 @@ sequenceDiagram
     end
     App-->>App: 3th party (web scraping)<br>solicita dados de uma base ou página
     Note right of App: Adquire dados da internet, <br>fazendo scraping de quaisquer<br> dados interessantes para o aluno.<br>O conteúdo deve ter atualização frequente.
-    App->>Kafka: envia mensagem de registro de acesso
-    par
-        Kafka--XAppLogger: registra acesso ao sistema
-        AppLogger->>MongoDB: grava na base
-    end
     App-->>-Alice: retorna dados
 ```
 
