@@ -43,7 +43,7 @@ sequenceDiagram
     break se JWT ausente ou corrompido
         App-->>Alice: error 403
     end
-    App-->>App: 3th party (web scraping)<br>solicita dados de uma base ou página
+    App-->>App: web scraping<br>solicita dados de uma base ou página<br>de um 3th party
     Note right of App: Adquire dados da internet, <br>fazendo scraping de quaisquer<br> dados interessantes para o aluno.<br>O conteúdo deve ter atualização frequente.
     App-->>-Alice: retorna dados
 ```
@@ -54,9 +54,6 @@ flowchart LR
   subgraph docker compose
     direction TB
     App
-    AppLogger
-    Kafka
     Postgres
-    MongoDB
   end
 ```
