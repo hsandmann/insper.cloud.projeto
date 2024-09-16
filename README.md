@@ -53,7 +53,7 @@ sequenceDiagram
 flowchart LR
   subgraph docker compose
     direction TB
-    App
-    Postgres
+    App --> Postgres
+    Postgres --> App
   end
 ```
