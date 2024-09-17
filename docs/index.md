@@ -134,7 +134,7 @@ A API dever ter no mínimo 3 endpoints:
 
         === "JSON"
 
-            ``` json title="JSON payload"
+            ``` json
             [
                 {"Date":"2024-09-05","Open":136112.0,"High":136656.0,"Low":135959.0,"Close":136502.0,"Volume":7528700},
                 {"Date":"2024-09-06","Open":136508.0,"High":136653.0,"Low":134476.0,"Close":134572.0,"Volume":7563300},
