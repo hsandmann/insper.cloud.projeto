@@ -105,7 +105,7 @@ A API dever ter no mínimo 3 endpoints:
     
         A resposta pode ser qualquer scrap de uma página de terceiros, no caso aqui, temos um scrap dos dados do índice Bovespa, apenas os últimos 10 dias, partindo da data de consulta. O formato também pode ser qualquer um, aqui temos um exemplo do mesmo dado em CSV e JSON.
 
-        === "Mardown"
+        === "Dados"
 
             |Date|Open|High|Low|Close|Volume|
             |---|---|---|---|---|---|
