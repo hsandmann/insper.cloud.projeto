@@ -1,6 +1,11 @@
 # Projeto 2024.2
 
+!!! info inline end
+
+    PROJETO **INDIVIDUAL**
+
 O projeto do semestre trata de uma API RESTful que deve ser capaz de cadastrar e autenticar usuários. Logo, para a execução do projeto, é necessário a construção de uma API RESTful para validar a infraestrutura de um aplicativo. Após a construção da API, o projeto deve ser dockerizado e, então, implantado no AWS. A fim de realizar todo o projeto, ele foi dividido em 2 etapas:
+
 
 1. [Dockerinzing](#dockerinzing)
 
