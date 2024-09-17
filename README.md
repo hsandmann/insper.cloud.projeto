@@ -1,6 +1,26 @@
-# insper.cloud.projeto
+# Insper > Cloud >> Projeto
 
-## CADASTRO
+O projeto é dividido em 2 partes:
+
+1. **Aplication Backend**: API RESTful em Node.js com Express e Postgres.
+2. **Frontend**: Aplicação em React.js.
+
+``` bash
+source ./venv/bin/activate
+```
+
+## Aplicativo
+
+### Instalação
+```bash
+{
+    "nome": "Disciplina Cloud",
+    "email": "cloud@insper.edu.br",
+    "senha": "cloud0"
+}
+```
+
+### CADASTRO
 ```mermaid
 sequenceDiagram
     autonumber
@@ -13,9 +33,9 @@ sequenceDiagram
     App->>Postgres: grava dados e hash da senha no bd
     App->>App: gera JWT Token
     App-->>-Alice: retorna JWT Token
-````
+```
 
-## LOGIN
+### LOGIN
 ```mermaid
 sequenceDiagram
     autonumber
