@@ -2,9 +2,11 @@
 
 !!! info inline end
 
-    PROJETO **INDIVIDUAL**
+    PROJETO: **INDIVIDUAL**
 
-O projeto do semestre trata de uma API RESTful que deve ser capaz de cadastrar e autenticar usuários. Logo, para a execução do projeto, é necessário a construção de uma API RESTful para validar a infraestrutura de um aplicativo. Após a construção da API, o projeto deve ser dockerizado e, então, implantado no AWS. A fim de realizar todo o projeto, ele foi dividido em 2 etapas:
+    DEADLINE: **22.nov.2024**
+
+O projeto do semestre trata de uma API [RESTful](https://www.w3.org/2001/sw/wiki/REST){:target="_blank"} que deve ser capaz de cadastrar e autenticar usuários. Logo, para a execução do projeto, é necessário a construção de uma API RESTful para validar a infraestrutura de um aplicativo. Após a construção da API, o projeto deve ser dockerizado e, então, implantado no AWS. A fim de realizar todo o projeto, ele foi dividido em 2 etapas:
 
 
 1. [Dockerinzing](#dockerinzing)
@@ -263,12 +265,12 @@ Após a primeira entrega de algum aluno, a etapa de implementação em AWS será
 
     | Etapa | Critério | Nota |  |
     |:-:|---|:-:|:-:|
-    | 1 | API + Dockerização<br> + Docker Hub + Documentação | C | C+<br>até 25/10 |
+    | 1 | API + Dockerização<br> + Docker Hub + Documentação | C | C+<br>até 25.out |
     | 2 | AWS | + 1 conceito |
     |   | AWS + Documentação | + 2 conceitos |
 
 !!! tip "Ponto extra"
-    Se a primeira etapa for entregue até o dia 25/10, o aluno ganha meio conceito extra na nota final, ou seja, se ele tirar C, fica com C+.
+    Se a primeira etapa for entregue até o dia 25.out, o aluno ganha meio conceito extra na nota final, ou seja, se ele tirar C, fica com C+.
 
 
 ## Referências
