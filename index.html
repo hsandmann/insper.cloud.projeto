@@ -1,0 +1,852 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Sandmann, H.">
+      
+      
+        <link rel="canonical" href="https://hsandmann.github.io/insper.cloud.projeto/">
+      
+      
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
+    
+    
+      
+        <title>Computação em Nuvem</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.35f28582.min.css">
+      
+      
+  
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+  
+  <style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96v320c0 35.3 28.7 64 64 64h224V368c0-26.5 21.5-48 48-48h112V96c0-35.3-28.7-64-64-64zm384 320H336c-8.8 0-16 7.2-16 16v112l32-32 64-64z"/></svg>');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M96 0C43 0 0 43 0 96v320c0 53 43 96 96 96h320c17.7 0 32-14.3 32-32s-14.3-32-32-32v-64c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H96m0 384h256v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32m32-240c0-8.8 7.2-16 16-16h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16m16 48h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16"/></svg>');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M256 512a256 256 0 1 0 0-512 256 256 0 1 0 0 512m-40-176h24v-64h-24c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24h-80c-13.3 0-24-10.7-24-24s10.7-24 24-24m40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64"/></svg>');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M480 32c0-12.9-7.8-24.6-19.8-29.6S434.5.2 425.3 9.3L381.7 53c-48 48-113.1 75-181 75H64c-35.3 0-64 28.7-64 64v96c0 35.3 28.7 64 64 64v128c0 17.7 14.3 32 32 32h64c17.7 0 32-14.3 32-32V352h8.7c67.9 0 133 27 181 75l43.6 43.6c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V300.3c18.6-8.8 32-32.5 32-60.4s-13.4-51.6-32-60.4zm-64 76.7v262.6C357.2 317.8 280.5 288 200.7 288H192v-96h8.7c79.8 0 156.5-29.8 215.3-83.3"/></svg>');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7l233.4-233.3c12.5-12.5 32.8-12.5 45.3 0z"/></svg>');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M256 512a256 256 0 1 0 0-512 256 256 0 1 0 0 512m-86.2-346.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1 0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6-13.3 0-24-10.7-24-24v-13.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1 0-8.4-6.8-15.1-15.1-15.1h-58.3c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1-64 0"/></svg>');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32m0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24m32 224a32 32 0 1 0-64 0 32 32 0 1 0 64 0"/></svg>');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M459.1 52.4 442.6 6.5c-1.9-3.9-6.1-6.5-10.5-6.5s-8.5 2.6-10.4 6.5l-16.5 45.9-46 16.8c-4.3 1.6-7.3 5.9-7.2 10.4 0 4.5 3 8.7 7.2 10.2l45.7 16.8 16.8 45.8c1.5 4.4 5.8 7.5 10.4 7.5s8.9-3.1 10.4-7.5l16.5-45.8 45.7-16.8c4.2-1.5 7.2-5.7 7.2-10.2 0-4.6-3-8.9-7.2-10.4zm-132.4 53c-12.5-12.5-32.8-12.5-45.3 0l-2.9 2.9c-22-8-45.8-12.3-70.5-12.3C93.1 96 0 189.1 0 304s93.1 208 208 208 208-93.1 208-208c0-24.7-4.3-48.5-12.2-70.5l2.9-2.9c12.5-12.5 12.5-32.8 0-45.3l-80-80zM200 192c-57.4 0-104 46.6-104 104v8c0 8.8-7.2 16-16 16s-16-7.2-16-16v-8c0-75.1 60.9-136 136-136h8c8.8 0 16 7.2 16 16s-7.2 16-16 16z"/></svg>');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 398.9c58.5-41.1 96-104.1 96-174.9C512 100.3 397.4 0 256 0S0 100.3 0 224c0 70.7 37.5 133.8 96 174.9V464c0 26.5 21.5 48 48 48h48v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h64v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h48c26.5 0 48-21.5 48-48v-65.1M96 256a64 64 0 1 1 128 0 64 64 0 1 1-128 0m256-64a64 64 0 1 1 0 128 64 64 0 1 1 0-128"/></svg>');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M320 0c17.7 0 32 14.3 32 32v64h120c39.8 0 72 32.2 72 72v272c0 39.8-32.2 72-72 72H168c-39.8 0-72-32.2-72-72V168c0-39.8 32.2-72 72-72h120V32c0-17.7 14.3-32 32-32M208 384c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16zM264 256a40 40 0 1 0-80 0 40 40 0 1 0 80 0m152 40a40 40 0 1 0 0-80 40 40 0 1 0 0 80M48 224h16v192H48c-26.5 0-48-21.5-48-48v-96c0-26.5 21.5-48 48-48m544 0c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48h-16V224z"/></svg>');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M288 0H128c-17.7 0-32 14.3-32 32s14.3 32 32 32v132.8c0 11.8-3.3 23.5-9.5 33.5L10.3 406.2C3.6 417.2 0 429.7 0 442.6 0 480.9 31.1 512 69.4 512h309.2c38.3 0 69.4-31.1 69.4-69.4 0-12.8-3.6-25.4-10.3-36.4L329.5 230.4c-6.2-10.1-9.5-21.7-9.5-33.5V64c17.7 0 32-14.3 32-32S337.7 0 320 0zm-96 196.8V64h64v132.8c0 23.7 6.6 46.9 19 67.1l34.5 56.1h-171l34.5-56.1c12.4-20.2 19-43.4 19-67.1"/></svg>');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M0 216C0 149.7 53.7 96 120 96h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V216m256 0c0-66.3 53.7-120 120-120h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64h-64c-35.3 0-64-28.7-64-64V216"/></svg>');}</style>
+
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="assets/_markdown_exec_pyodide.css">
+    
+      <link rel="stylesheet" href="termynal.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#projeto-20242" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="Computação em Nuvem" class="md-header__button md-logo" aria-label="Computação em Nuvem" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Computação em Nuvem
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Projeto 2024.2
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="Computação em Nuvem" class="md-nav__button md-logo" aria-label="Computação em Nuvem" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Computação em Nuvem
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Projeto 2024.2
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Projeto 2024.2
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#construcao-da-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Construção da API
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dockerinzing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dockerinzing
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dockerinzing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#publicacao-no-docker-hub" class="md-nav__link">
+    <span class="md-ellipsis">
+      Publicação no Docker Hub
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entrega" class="md-nav__link">
+    <span class="md-ellipsis">
+      Entrega
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aws" class="md-nav__link">
+    <span class="md-ellipsis">
+      AWS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rubrica" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rubrica
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#construcao-da-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Construção da API
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dockerinzing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dockerinzing
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dockerinzing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#publicacao-no-docker-hub" class="md-nav__link">
+    <span class="md-ellipsis">
+      Publicação no Docker Hub
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entrega" class="md-nav__link">
+    <span class="md-ellipsis">
+      Entrega
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aws" class="md-nav__link">
+    <span class="md-ellipsis">
+      AWS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rubrica" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rubrica
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="projeto-20242">Projeto 2024.2</h1>
+<p>O projeto do semestre trata de uma API RESTful que deve ser capaz de cadastrar e autenticar usuários. Logo, para a execução do projeto, é necessário a construção de uma API RESTful para validar a infraestrutura de um aplicativo. Após a construção da API, o projeto deve ser dockerizado e, então, implantado no AWS. A fim de realizar todo o projeto, ele foi dividido em 2 etapas:</p>
+<ol>
+<li>
+<p><a href="#dockerinzing">Dockerinzing</a></p>
+</li>
+<li>
+<p><a href="#aws">AWS</a></p>
+</li>
+</ol>
+<p>A base do projeto é a construção da API.</p>
+<h2 id="construcao-da-api">Construção da API</h2>
+<p>O aplicativo teve ser uma API RESTful simples, sem interface visual. Sendo que a API deve ser capaz de cadastrar e autenticar usuários, além de permitir a consulta de dados de terceiros.</p>
+<p>A API dever ter no mínimo 3 endpoints:</p>
+<details class="note" open="open">
+<summary>Registro de Usuário</summary>
+<div class="language-http highlight"><span class="filename">Endpoint</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="err">POST /registrar</span>
+</span></code></pre></div>
+<p>Request
+<div class="language-json highlight"><span class="filename">JSON payload</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="nt">&quot;nome&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Disciplina Cloud&quot;</span><span class="p">,</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">&quot;email&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cloud@insper.edu.br&quot;</span><span class="p">,</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="nt">&quot;senha&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cloud0&quot;</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="p">}</span>
+</span></code></pre></div></p>
+<p>Response
+<div class="language-json highlight"><span class="filename">JSON payload</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="nt">&quot;jwt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkRpc2NpcGxpbmEgQ2xvdWQiLCJpYXQiOjE1MTYyMzkwMjJ9.s76o9X4UIANSI-aTF8UhqnBYyIRWw_WH4ut8Xqmo6i0&quot;</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="p">}</span>
+</span></code></pre></div></p>
+<pre class="mermaid"><code>sequenceDiagram
+    autonumber
+    actor Alice
+    Alice-&gt;&gt;+App: POST /registrar
+    App-&gt;&gt;+Postgres: consulta email
+    break se email encontrado
+        Postgres--&gt;&gt;Alice: error 409
+    end
+    App-&gt;&gt;Postgres: grava dados e hash da senha no bd
+    App-&gt;&gt;App: gera JWT Token
+    App--&gt;&gt;-Alice: retorna JWT Token</code></pre>
+</details>
+<details class="note" open="open">
+<summary>Autenticação de Usuário</summary>
+<div class="language-http highlight"><span class="filename">Endpoint</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="err">POST /login</span>
+</span></code></pre></div>
+<p>Request
+<div class="language-json highlight"><span class="filename">JSON payload</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">{</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="nt">&quot;email&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cloud@insper.edu.br&quot;</span><span class="p">,</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="nt">&quot;senha&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cloud0&quot;</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="p">}</span>
+</span></code></pre></div></p>
+<p>Response
+<div class="language-json highlight"><span class="filename">JSON payload</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">{</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="nt">&quot;jwt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="s2">            eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkRpc2N</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="s2">            pcGxpbmEgQ2xvdWQiLCJpYXQiOjE1MTYyMzkwMjJ9.</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="s2">            s76o9X4UIANSI-aTF8UhqnBYyIRWw_WH4ut8Xqmo6i0&quot;</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="p">}</span>
+</span></code></pre></div></p>
+<p>Diagrama de Sequência
+<pre class="mermaid"><code>sequenceDiagram
+    autonumber
+    actor Alice
+    Alice-&gt;&gt;+App: POST /login
+    App-&gt;&gt;+Postgres: consulta email e hash no db
+    break se email não encontrado
+        Postgres--&gt;&gt;Alice: error 401
+    end
+    break se email e senha não confere
+        Postgres--&gt;&gt;Alice: error 401
+    end
+    App-&gt;&gt;App: gera JWT Token
+    App--&gt;&gt;-Alice: retorna JWT Token
+</code></pre></p>
+</details>
+<details class="note" open="open">
+<summary>Aquisição dos Dados</summary>
+<div class="language-http highlight"><span class="filename">Endpoint</span><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="err">GET /consultar</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="err">### HEADER</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="err">Authorization: Bearer &lt;JWT&gt;</span>
+</span></code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Response</p>
+<p>A resposta pode ser qualquer scrap de uma página de terceiros, no caso aqui, temos um scrap dos dados do índice Bovespa, apenas os últimos 10 dias, partindo da data de consulta. O formato também pode ser qualquer um, aqui temos um exemplo do mesmo dado em CSV e JSON.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Mardown</label><label for="__tabbed_1_2">CSV</label><label for="__tabbed_1_3">JSON</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>Open</th>
+<th>High</th>
+<th>Low</th>
+<th>Close</th>
+<th>Volume</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2024-09-05</td>
+<td>136112.0</td>
+<td>136656.0</td>
+<td>135959.0</td>
+<td>136502.0</td>
+<td>7528700</td>
+</tr>
+<tr>
+<td>2024-09-06</td>
+<td>136508.0</td>
+<td>136653.0</td>
+<td>134476.0</td>
+<td>134572.0</td>
+<td>7563300</td>
+</tr>
+<tr>
+<td>2024-09-09</td>
+<td>134574.0</td>
+<td>135250.0</td>
+<td>134399.0</td>
+<td>134737.0</td>
+<td>6587600</td>
+</tr>
+<tr>
+<td>2024-09-10</td>
+<td>134738.0</td>
+<td>134738.0</td>
+<td>133754.0</td>
+<td>134320.0</td>
+<td>8253500</td>
+</tr>
+<tr>
+<td>2024-09-11</td>
+<td>134319.0</td>
+<td>135087.0</td>
+<td>133757.0</td>
+<td>134677.0</td>
+<td>7947300</td>
+</tr>
+<tr>
+<td>2024-09-12</td>
+<td>134677.0</td>
+<td>134777.0</td>
+<td>133591.0</td>
+<td>134029.0</td>
+<td>7004900</td>
+</tr>
+<tr>
+<td>2024-09-13</td>
+<td>134031.0</td>
+<td>135879.0</td>
+<td>134031.0</td>
+<td>134882.0</td>
+<td>8866000</td>
+</tr>
+<tr>
+<td>2024-09-16</td>
+<td>134885.0</td>
+<td>135715.0</td>
+<td>134870.0</td>
+<td>135118.0</td>
+<td>6707000</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tabbed-block">
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Date,Open,High,Low,Close,Volume
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>2024-09-05,136112.0,136656.0,135959.0,136502.0,7528700
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>2024-09-06,136508.0,136653.0,134476.0,134572.0,7563300
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>2024-09-09,134574.0,135250.0,134399.0,134737.0,6587600
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>2024-09-10,134738.0,134738.0,133754.0,134320.0,8253500
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>2024-09-11,134319.0,135087.0,133757.0,134677.0,7947300
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>2024-09-12,134677.0,134777.0,133591.0,134029.0,7004900
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>2024-09-13,134031.0,135879.0,134031.0,134882.0,8866000
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>2024-09-16,134885.0,135715.0,134870.0,135118.0,6707000
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-json highlight"><span class="filename">JSON payload</span><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">[</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">    </span><span class="p">{</span><span class="nt">&quot;Date&quot;</span><span class="p">:</span><span class="s2">&quot;2024-09-05&quot;</span><span class="p">,</span><span class="nt">&quot;Open&quot;</span><span class="p">:</span><span class="mf">136112.0</span><span class="p">,</span><span class="nt">&quot;High&quot;</span><span class="p">:</span><span class="mf">136656.0</span><span class="p">,</span><span class="nt">&quot;Low&quot;</span><span class="p">:</span><span class="mf">135959.0</span><span class="p">,</span><span class="nt">&quot;Close&quot;</span><span class="p">:</span><span class="mf">136502.0</span><span class="p">,</span><span class="nt">&quot;Volume&quot;</span><span class="p">:</span><span class="mi">7528700</span><span class="p">},</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">    </span><span class="p">{</span><span class="nt">&quot;Date&quot;</span><span class="p">:</span><span class="s2">&quot;2024-09-06&quot;</span><span class="p">,</span><span class="nt">&quot;Open&quot;</span><span class="p">:</span><span class="mf">136508.0</span><span class="p">,</span><span class="nt">&quot;High&quot;</span><span class="p">:</span><span class="mf">136653.0</span><span class="p">,</span><span class="nt">&quot;Low&quot;</span><span class="p">:</span><span class="mf">134476.0</span><span class="p">,</span><span class="nt">&quot;Close&quot;</span><span class="p">:</span><span class="mf">134572.0</span><span class="p">,</span><span class="nt">&quot;Volume&quot;</span><span class="p">:</span><span class="mi">7563300</span><span class="p">},</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">    </span><span class="p">{</span><span class="nt">&quot;Date&quot;</span><span class="p">:</span><span class="s2">&quot;2024-09-09&quot;</span><span class="p">,</span><span class="nt">&quot;Open&quot;</span><span class="p">:</span><span class="mf">134574.0</span><span class="p">,</span><span class="nt">&quot;High&quot;</span><span class="p">:</span><span class="mf">135250.0</span><span class="p">,</span><span class="nt">&quot;Low&quot;</span><span class="p">:</span><span class="mf">134399.0</span><span class="p">,</span><span class="nt">&quot;Close&quot;</span><span class="p">:</span><span class="mf">134737.0</span><span class="p">,</span><span class="nt">&quot;Volume&quot;</span><span class="p">:</span><span class="mi">6587600</span><span class="p">},</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">    </span><span class="p">{</span><span class="nt">&quot;Date&quot;</span><span class="p">:</span><span class="s2">&quot;2024-09-10&quot;</span><span class="p">,</span><span class="nt">&quot;Open&quot;</span><span class="p">:</span><span class="mf">134738.0</span><span class="p">,</span><span class="nt">&quot;High&quot;</span><span class="p">:</span><span class="mf">134738.0</span><span class="p">,</span><span class="nt">&quot;Low&quot;</span><span class="p">:</span><span class="mf">133754.0</span><span class="p">,</span><span class="nt">&quot;Close&quot;</span><span class="p">:</span><span class="mf">134320.0</span><span class="p">,</span><span class="nt">&quot;Volume&quot;</span><span class="p">:</span><span class="mi">8253500</span><span class="p">},</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">    </span><span class="p">{</span><span class="nt">&quot;Date&quot;</span><span class="p">:</span><span class="s2">&quot;2024-09-11&quot;</span><span class="p">,</span><span class="nt">&quot;Open&quot;</span><span class="p">:</span><span class="mf">134319.0</span><span class="p">,</span><span class="nt">&quot;High&quot;</span><span class="p">:</span><span class="mf">135087.0</span><span class="p">,</span><span class="nt">&quot;Low&quot;</span><span class="p">:</span><span class="mf">133757.0</span><span class="p">,</span><span class="nt">&quot;Close&quot;</span><span class="p">:</span><span class="mf">134677.0</span><span class="p">,</span><span class="nt">&quot;Volume&quot;</span><span class="p">:</span><span class="mi">7947300</span><span class="p">},</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">    </span><span class="p">{</span><span class="nt">&quot;Date&quot;</span><span class="p">:</span><span class="s2">&quot;2024-09-12&quot;</span><span class="p">,</span><span class="nt">&quot;Open&quot;</span><span class="p">:</span><span class="mf">134677.0</span><span class="p">,</span><span class="nt">&quot;High&quot;</span><span class="p">:</span><span class="mf">134777.0</span><span class="p">,</span><span class="nt">&quot;Low&quot;</span><span class="p">:</span><span class="mf">133591.0</span><span class="p">,</span><span class="nt">&quot;Close&quot;</span><span class="p">:</span><span class="mf">134029.0</span><span class="p">,</span><span class="nt">&quot;Volume&quot;</span><span class="p">:</span><span class="mi">7004900</span><span class="p">},</span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">    </span><span class="p">{</span><span class="nt">&quot;Date&quot;</span><span class="p">:</span><span class="s2">&quot;2024-09-13&quot;</span><span class="p">,</span><span class="nt">&quot;Open&quot;</span><span class="p">:</span><span class="mf">134031.0</span><span class="p">,</span><span class="nt">&quot;High&quot;</span><span class="p">:</span><span class="mf">135879.0</span><span class="p">,</span><span class="nt">&quot;Low&quot;</span><span class="p">:</span><span class="mf">134031.0</span><span class="p">,</span><span class="nt">&quot;Close&quot;</span><span class="p">:</span><span class="mf">134882.0</span><span class="p">,</span><span class="nt">&quot;Volume&quot;</span><span class="p">:</span><span class="mi">8866000</span><span class="p">},</span>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="w">    </span><span class="p">{</span><span class="nt">&quot;Date&quot;</span><span class="p">:</span><span class="s2">&quot;2024-09-16&quot;</span><span class="p">,</span><span class="nt">&quot;Open&quot;</span><span class="p">:</span><span class="mf">134885.0</span><span class="p">,</span><span class="nt">&quot;High&quot;</span><span class="p">:</span><span class="mf">135715.0</span><span class="p">,</span><span class="nt">&quot;Low&quot;</span><span class="p">:</span><span class="mf">134870.0</span><span class="p">,</span><span class="nt">&quot;Close&quot;</span><span class="p">:</span><span class="mf">135118.0</span><span class="p">,</span><span class="nt">&quot;Volume&quot;</span><span class="p">:</span><span class="mi">6707000</span><span class="p">}</span>
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="p">]</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<pre class="mermaid"><code>sequenceDiagram
+    autonumber
+    actor Alice
+    Alice-&gt;&gt;+App: GET /consultar &lt;br&gt; Token JWT no header
+    App--&gt;&gt;App: verifica permissão do JWT
+    break se JWT ausente ou corrompido
+        App--&gt;&gt;Alice: error 403
+    end
+    App--&gt;&gt;App: web scraping&lt;br&gt;solicita dados de uma base ou página&lt;br&gt;de um 3th party
+    Note right of App: Adquire dados da internet, &lt;br&gt;fazendo scraping de quaisquer&lt;br&gt; dados interessantes para o aluno.&lt;br&gt;O conteúdo deve ter atualização frequente.
+    App--&gt;&gt;-Alice: retorna dados</code></pre>
+<div class="admonition warning">
+<p class="admonition-title">Aquisição dos Dados</p>
+<p>Os dados devolvidos pela consulta devem ser de uma página de terceiros, e devem ser atualizados frequentemente. Caso o usuário não tenha um token válido, a API deve retornar um erro 403.</p>
+<p>A escolha dos dados é livre, mas deve ser algo que possa ser atualizado frequentemente, ao menos, diariamente. Claro, respeitando os termos de uso do site.</p>
+</div>
+</details>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>O projeto pode ser desenvolvido em qualquer linguagem de programação, mas é recomendado o uso de Python ou Java.</p>
+</div>
+<h2 id="dockerinzing">Dockerinzing</h2>
+<p>Quando o código da API estiver pronto, ele deve ser dockerizado. Para isso, você deve criar um arquivo <code>Dockerfile</code> (de acordo com a linguagem e ambiente de execução escolhidos) e um <code>compose.yml</code> para a execução da aplicação.</p>
+<p>O docker compose deve conter pelo menos 2 serviços: a aplicação e o banco de dados. A aplicação deve ser capaz de se conectar ao banco de dados e realizar as operações de CRUD. Conforme ilustrado abaixo:</p>
+<pre class="mermaid"><code>flowchart LR
+  subgraph docker compose
+    direction TB
+    App --&gt; Postgres
+    Postgres --&gt; App
+  end</code></pre>
+<p>A aplicação deve ser autocontida, ou seja, deve ser possível executar a aplicação apenas com o comando <code>docker compose up</code>.</p>
+<div class="termy" data-termynal data-ty-macos data-ty-title="bash"><span data-ty="input" data-ty-prompt="&gt;">docker compose up -d</span><span data-ty>[+] Running 2/2<br> ✔ Container database   Started   0.3s<br> ✔ Container app        Started   0.5s<br></span><span data-ty="input" data-ty-prompt="&gt;">docker compose ps</span><span data-ty>NAME           SERVICE       STATUS     PORTS<br>app            app           Up         0.0.0.0:8080-&gt;8080/tcp<br>database       postgres      Up<br></span></div>
+
+<p>Para organização, é sugerida a seguinte estrutura de diretórios:</p>
+<div class="language-bash highlight"><span class="filename">estrutura de diretório sugerida</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>📁<span class="w"> </span>app
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├──<span class="w"> </span>📄<span class="w"> </span>Dockerfile
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├──<span class="w"> </span>📄<span class="w"> </span>app.py
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>├──<span class="w"> </span>📄<span class="w"> </span>requirements.txt
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>└──<span class="w"> </span>📄<span class="w"> </span>...
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>📄<span class="w"> </span>compose.yml
+</span></code></pre></div>
+<h3 id="publicacao-no-docker-hub">Publicação no Docker Hub</h3>
+<p>Após a dockerização, o projeto deve ser publicado no Docker Hub. O link do Docker Hub deve ser incluído na documentação do projeto.</p>
+<h3 id="entrega">Entrega</h3>
+<p>A entrega deverá ser um link do projeto no GitHub, contendo o código da API e o Dockerfile.</p>
+<div class="admonition success">
+<p class="admonition-title">Entrega</p>
+<p>Deve haver uma documentação básica no README.md do repositório:</p>
+<ul>
+<li>nome do aluno;</li>
+<li>explicação do projeto - scrap do que foi feito;</li>
+<li>explicação de como executar a aplicação;</li>
+<li>documentação dos endpoints da API;</li>
+<li>screenshot com os endpoints testados;</li>
+<li>video de execução da aplicação - de até 1 minuto.</li>
+<li>link para o docker hub do projeto.</li>
+</ul>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Estética</p>
+<p>A documentação é um dos pontos mais importantes do projeto. Seja criativo e use imagens, gifs, tabelas, etc. Também, se possível, faça uso de  ferramentas:</p>
+<ul>
+<li><a href="https://www.mkdocs.org/" target="_blank">mkdocs</a> para gerar a documentação e hospedá-la no GitHub Pages.</li>
+<li><a href="https://mermaid-js.github.io/mermaid/#/" target="_blank">mermaid</a> para gerar diagramas de sequência, fluxogramas, etc.</li>
+</ul>
+</div>
+<h2 id="aws">AWS</h2>
+<p>Após a primeira entrega de algum aluno, a etapa de implementação em AWS será publicada.</p>
+<!-- Após a primeira entrega do projeto, o próximo passo é implantar a aplicação no AWS. A implantação deve ser feita em um EC2. Com load balancer e auto scaling. -->
+<!-- Após a dockerização, o projeto deve ser implantado no AWS. A implantação deve ser feita em um EC2. -->
+
+<!-- ### Entrega -->
+
+<h2 id="rubrica">Rubrica</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Etapa</th>
+<th>Critério</th>
+<th style="text-align: center;">Nota</th>
+<th style="text-align: center;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td>API + Dockerização<br> + Docker Hub + Documentação</td>
+<td style="text-align: center;">C</td>
+<td style="text-align: center;">C+<br>até 31/10</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td>AWS</td>
+<td style="text-align: center;">+ 1 conceito</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td>AWS + Documentação</td>
+<td style="text-align: center;">+ 2 conceitos</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Ponto extra</p>
+<p>Se a primeira etapa for entregue até o dia 31/10, o aluno ganha meio conceito extra na nota final, ou seja, se ele tirar C, fica com C+.</p>
+</div>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 17, 2024</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    <script id="__config" type="application/json">{"base": ".", "features": ["content.code.copy", "content.code.select", "content.code.annotate", "content.tooltips", "navigation.instant", "navigation.instant.progress", "navigation.path", "navigation.tracking"], "search": "assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="assets/javascripts/bundle.56dfad97.min.js"></script>
+      
+        <script src="assets/_markdown_exec_pyodide.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="termynal.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>
