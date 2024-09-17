@@ -264,7 +264,7 @@ Após a primeira entrega de algum aluno, a etapa de implementação em AWS será
     Se a primeira etapa for entregue até o dia 25/10, o aluno ganha meio conceito extra na nota final, ou seja, se ele tirar C, fica com C+.
 
 
-## Referências:
+## Referências
 
 [^1]: [Introduction to JSON Web Tokens](https://jwt.io/introduction){target='_blank'}
 
