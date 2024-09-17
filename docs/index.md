@@ -254,11 +254,13 @@ Após a primeira entrega de algum aluno, a etapa de implementação em AWS será
 
 ## Rubrica
 
-| Etapa | Critério | Nota |  |
-|:-:|---|:-:|:-:|
-| 1 | API + Dockerização<br> + Docker Hub + Documentação | C | C+<br>até 25/10 |
-| 2 | AWS | + 1 conceito |
-|   | AWS + Documentação | + 2 conceitos |
+!!! danger "Rubrica"
+
+    | Etapa | Critério | Nota |  |
+    |:-:|---|:-:|:-:|
+    | 1 | API + Dockerização<br> + Docker Hub + Documentação | C | C+<br>até 25/10 |
+    | 2 | AWS | + 1 conceito |
+    |   | AWS + Documentação | + 2 conceitos |
 
 !!! tip "Ponto extra"
     Se a primeira etapa for entregue até o dia 25/10, o aluno ganha meio conceito extra na nota final, ou seja, se ele tirar C, fica com C+.
