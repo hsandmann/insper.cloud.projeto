@@ -234,7 +234,7 @@ A entrega deverá ser um link do projeto no GitHub, contendo o código da API e 
     - video de execução da aplicação - de até 1 minuto.
     - link para o docker hub do projeto.
 
-!!! tip "Estética"
+!!! tip "Documentação"
     A documentação é um dos pontos mais importantes do projeto. Seja criativo e use imagens, gifs, tabelas, etc. Também, se possível, faça uso de  ferramentas:
     
     - [mkdocs](https://www.mkdocs.org/){target='_blank'} para gerar a documentação e hospedá-la no GitHub Pages.
