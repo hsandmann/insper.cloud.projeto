@@ -180,7 +180,7 @@ A API dever ter no mínimo 3 endpoints:
 
 ## Dockerinzing
 
-Quando o código da API estiver pronto, ele deve ser dockerizado. Para isso, você deve criar um arquivo `Dockerfile` (de acordo com a linguagem e ambiente de execução escolhidos) e um `compose.yml` para a execução da aplicação.
+Quando o código da API estiver pronto, ele deve ser dockerizado. Para isso, você deve criar um arquivo `Dockerfile` (de acordo com a linguagem e ambiente de execução escolhidos) e um `compose.yaml` para a execução da aplicação.
 
 O docker compose deve conter pelo menos 2 serviços: a aplicação e o banco de dados. A aplicação deve ser capaz de se conectar ao banco de dados e realizar as operações de CRUD. Conforme ilustrado abaixo:
 
@@ -219,7 +219,7 @@ app
   app.py
   requirements.txt
   ...
-compose.yml
+compose.yaml
 ```
 
 ### Publicação no Docker Hub
