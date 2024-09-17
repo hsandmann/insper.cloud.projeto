@@ -700,7 +700,7 @@
 <p>O projeto pode ser desenvolvido em qualquer linguagem de programação, mas é recomendado o uso de Python ou Java.</p>
 </div>
 <h2 id="dockerinzing">Dockerinzing</h2>
-<p>Quando o código da API estiver pronto, ele deve ser dockerizado. Para isso, você deve criar um arquivo <code>Dockerfile</code> (de acordo com a linguagem e ambiente de execução escolhidos) e um <code>compose.yml</code> para a execução da aplicação.</p>
+<p>Quando o código da API estiver pronto, ele deve ser dockerizado. Para isso, você deve criar um arquivo <code>Dockerfile</code> (de acordo com a linguagem e ambiente de execução escolhidos) e um <code>compose.yaml</code> para a execução da aplicação.</p>
 <p>O docker compose deve conter pelo menos 2 serviços: a aplicação e o banco de dados. A aplicação deve ser capaz de se conectar ao banco de dados e realizar as operações de CRUD. Conforme ilustrado abaixo:</p>
 <pre class="mermaid"><code>flowchart LR
   subgraph docker compose
@@ -717,7 +717,7 @@
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├──<span class="w"> </span>📄<span class="w"> </span>app.py
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>├──<span class="w"> </span>📄<span class="w"> </span>requirements.txt
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>└──<span class="w"> </span>📄<span class="w"> </span>...
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>📄<span class="w"> </span>compose.yml
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>📄<span class="w"> </span>compose.yaml
 </span></code></pre></div>
 <h3 id="publicacao-no-docker-hub">Publicação no Docker Hub</h3>
 <p>Após a dockerização, o projeto deve ser publicado no Docker Hub. O link do Docker Hub deve ser incluído na documentação do projeto.</p>
