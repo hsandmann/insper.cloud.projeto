@@ -219,7 +219,8 @@ compose.yml
 
 Após a dockerização, o projeto deve ser publicado no Docker Hub. O link do Docker Hub deve ser incluído na documentação do projeto.
 
-A publicação no docker hub deve ser feita via linha de comando.
+!!! warning "Publicação no Docker Hub"
+    A publicação no docker hub deve ser feita via linha de comando. E os comandos utilizados devem ser incluídos na documentação do projeto.
 
 ### Entrega
 
