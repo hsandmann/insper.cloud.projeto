@@ -57,6 +57,10 @@ A API dever ter no mínimo 3 endpoints:
         App-->>-Alice: retorna JWT Token
     ```
 
+    !!! failure "Senha"
+        
+        Nunca guarde a senha do usuário no banco, apenas uma hash da senha.
+
 ???+ note "Autenticação de Usuário"
 
     ``` http title="Endpoint"
@@ -160,7 +164,7 @@ A API dever ter no mínimo 3 endpoints:
         actor Alice
         Alice->>+App: GET /consultar <br> Token JWT no header
         App-->>App: verifica permissão do JWT
-        break se JWT ausente ou corrompido
+        break se JWT ausente ou inválido
             App-->>Alice: error 403
         end
         App-->>App: web scraping<br>solicita dados de uma base ou página<br>de um 3th party
