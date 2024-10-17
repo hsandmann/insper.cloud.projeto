@@ -256,21 +256,31 @@ A entrega deverá ser um link do projeto no GitHub, contendo o código da API e 
 
 ## AWS
 
-Após a primeira entrega de algum aluno, a etapa de implementação em AWS será publicada.
-<!-- Após a primeira entrega do projeto, o próximo passo é implantar a aplicação no AWS. A implantação deve ser feita em um EC2. Com load balancer e auto scaling. -->
-<!-- Após a dockerização, o projeto deve ser implantado no AWS. A implantação deve ser feita em um EC2. -->
+O próximo passo é implantar a aplicação no AWS. A implantação deve ser feita utilizando o Elastic Kubernetes Service (EKS). A aplicação deve ser implantada em um cluster EKS.
 
-<!-- ### Entrega -->
+O Kubernetes é uma ferramenta de orquestração de contêineres que automatiza a implantação, o dimensionamento e a gestão de aplicações em contêineres. O EKS é um serviço gerenciado que facilita a execução do Kubernetes na AWS.
 
+Você deve subir um cluster EKS e implantar dois PODs, sendo um da aplicação e outro do banco de dados. A aplicação deve ser capaz de se conectar ao banco de dados e realizar as operações de endpoints da API acima descritas.
+
+### Entrega
+
+A entrega deverá ser um link do projeto no GitHub, o mesmo do anterior, mas uma sessão sobre a publicação na AWS, contendo o uma breve explicação no README e um link para um vídeo, explicando e executando o trabalho entregue.
+
+!!! success "Entrega"
+    O vídeo apresentado deve ter entre 4 e 5 minutos e deve conter:
+
+    - logar na conta e acessar o projeto;
+    - explicar o que foi feito e mostrar os componentes do projeto (eks, roles, etc);
+    - mostrar o projeto executando na AWS: chamada da API;
 
 ## Rubrica
 
 !!! danger "Rubrica"
 
-    | Etapa | Critério | Nota |  |
+    | Etapa | Critério | Nota | Observações |
     |:-:|---|:-:|:-:|
     | 1 | API + Dockerização<br> + Docker Hub + Documentação | C | C+<br>até 25.out |
-    | 2 | AWS | + 1 conceito |
+    | 2 | AWS | + 1 conceito | - 2 conceitos se não entregar a etapa do AWS |
     |   | AWS + Documentação | + 2 conceitos |
 
 !!! tip "Ponto extra"
@@ -282,3 +292,5 @@ Após a primeira entrega de algum aluno, a etapa de implementação em AWS será
 [^1]: [Introduction to JSON Web Tokens](https://jwt.io/introduction){target='_blank'}
 
 [^2]: [How to containerize different types of services](https://docs.docker.com/samples/){target='_blank'}
+
+[^3]: :fontawesome-brands-youtube:{ .youtube } [Como criar um cluster Kubernetes na AWS com EKS](https://youtu.be/JrT5YV1KMeY){:target="_blank"} por [Fabricio Veronez](https://github.com/fabricioveronez){:target="_blank"}
