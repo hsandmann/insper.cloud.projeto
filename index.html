@@ -774,6 +774,32 @@
 <li>link para o docker hub do projeto.</li>
 </ul>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Variáveis de Ambiente</p>
+<p>As credenciais do banco de dados e JWT devem ser passadas via variáveis de ambiente, por um arquivo <code>.env</code>. Todavia, para facilitar a correção, as credenciais podem ser passadas diretamente no <code>compose.yaml</code> por valores padrões, caso não haja uma variável de ambiente. Exemplo:</p>
+<div class="language-yaml highlight"><span class="filename">compose.yaml</span><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">db</span><span class="p p-Indicator">:</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">        </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">postgres:17</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">        </span><span class="nt">environment</span><span class="p">:</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">            </span><span class="nt">POSTGRES_DB</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${POSTGRES_DB:projeto}</span><span class="w"> </span><span class="c1"># (1)!</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">            </span><span class="nt">POSTGRES_USER</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${POSTGRES_USER:projeto}</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="w">            </span><span class="nt">POSTGRES_PASSWORD</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${POSTGRES_PASSWORD:projeto}</span>
+</span></code></pre></div>
+<ol>
+<li>Caso a variável de ambiente <code>POSTGRES_DB</code> não exista, não seja definida no arquivo <code>.env</code>, o valor padrão será <code>projeto</code>.</li>
+</ol>
+<div class="language-text highlight"><span class="filename">.env</span><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>POSTGRES_DB=superprojeto
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>POSTGRES_USER=meuprojeto
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>POSTGRES_PASSWORD=S3cr3t
+</span></code></pre></div>
+<p>Ao executar, o docker compose irá utilizar as variáveis de ambiente do arquivo <code>.env</code>, caso existam, senão, utilizará os valores padrões definidos já dentro do arquivo <code>compose.yaml</code>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Segurança</p>
+<p>As credenciais do banco de dados e JWT devem ser passadas via variáveis de ambiente, nunca diretamente no código. Até mesmo para ter credenciais diferentes para cada ambiente (dev, test, prod).</p>
+<p>Ainda, <strong>NUNCA</strong> coloque credenciais no repositório, mesmo que seja um repositório privado. Ou seja, NUNCA coloque um arquivo <code>.env</code> no repositório (GitHub).</p>
+</div>
+</div>
 <div class="admonition tip">
 <p class="admonition-title">Documentação</p>
 <p>A documentação é um dos pontos mais importantes do projeto. Seja criativo e use imagens, gifs, tabelas, etc. Também, se possível, faça uso de  ferramentas:</p>
@@ -790,14 +816,14 @@
 <p>A entrega deverá ser um link do projeto no GitHub, o mesmo do anterior, mas para uma sessão sobre a publicação na AWS, contendo o uma breve explicação e um link para um vídeo, explicando e executando o trabalho entregue.</p>
 <div class="admonition success">
 <p class="admonition-title">Entrega</p>
-<p>O vídeo apresentado deve ter entre 4 e 5 minutos e deve conter:</p>
+<p>O vídeo apresentado deve ter entre 3 e 5 minutos e <strong>DEVE demonstrar TODOS</strong> os seguintes itens:</p>
 <ul>
 <li>logar na conta e acessar o projeto;</li>
 <li>explicar o que foi feito e mostrar os componentes do projeto (eks, roles, etc);</li>
 <li>executar o comando <code>kubectl get pods</code> e mostrar os pods rodando;
-  <div class="language-shell highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>kubectl<span class="w"> </span>get<span class="w"> </span>pods
+  <div class="language-shell highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>kubectl<span class="w"> </span>get<span class="w"> </span>pods
 </span></code></pre></div></li>
-<li>mostrar o projeto executando na AWS: chamada da API;</li>
+<li>mostrar o projeto executando na AWS: chamada da API por um cliente (curl, postman, etc);</li>
 </ul>
 <p>No texto deve haver um link para os arquivos de configuração do Kubernetes (arquivos .yaml: deployment.yaml, service.yaml, etcs), repositório do projeto.</p>
 </div>
