@@ -264,7 +264,7 @@ Você deve subir um cluster EKS e implantar dois PODs, sendo um da aplicação e
 
 ### Entrega
 
-A entrega deverá ser um link do projeto no GitHub, o mesmo do anterior, mas uma sessão sobre a publicação na AWS, contendo o uma breve explicação no README e um link para um vídeo, explicando e executando o trabalho entregue.
+A entrega deverá ser um link do projeto no GitHub, o mesmo do anterior, mas para uma sessão sobre a publicação na AWS, contendo o uma breve explicação e um link para um vídeo, explicando e executando o trabalho entregue.
 
 !!! success "Entrega"
     O vídeo apresentado deve ter entre 4 e 5 minutos e deve conter:
@@ -276,6 +276,8 @@ A entrega deverá ser um link do projeto no GitHub, o mesmo do anterior, mas uma
       kubectl get pods
       ```
     - mostrar o projeto executando na AWS: chamada da API;
+
+    No texto deve haver um link para os arquivos de configuração do Kubernetes (arquivos .yaml: deployment.yaml, service.yaml, etcs), repositório do projeto.
 
 ## Rubrica
 
