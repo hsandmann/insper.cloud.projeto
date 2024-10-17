@@ -248,6 +248,36 @@ A entrega deverá ser um link do projeto no GitHub, contendo o código da API e 
     - video de execução da aplicação - de até 1 minuto.
     - link para o docker hub do projeto.
 
+!!! note "Variáveis de Ambiente"
+    As credenciais do banco de dados e JWT devem ser passadas via variáveis de ambiente, por um arquivo `.env`. Todavia, para facilitar a correção, as credenciais podem ser passadas diretamente no `compose.yaml` por valores padrões, caso não haja uma variável de ambiente. Exemplo:
+
+    ``` { .yaml title="compose.yaml" }
+    name: app
+
+        db:
+            image: postgres:17
+            environment:
+                POSTGRES_DB: ${POSTGRES_DB:projeto} # (1)!
+                POSTGRES_USER: ${POSTGRES_USER:projeto}
+                POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:projeto}
+    ```
+
+    1.  Caso a variável de ambiente `POSTGRES_DB` não exista, não seja definida no arquivo `.env`, o valor padrão será `projeto`.
+
+
+    ``` { .env title=".env" }
+    POSTGRES_DB=superprojeto
+    POSTGRES_USER=meuprojeto
+    POSTGRES_PASSWORD=S3cr3t
+    ```
+
+    Ao executar, o docker compose irá utilizar as variáveis de ambiente do arquivo `.env`, caso existam, senão, utilizará os valores padrões definidos já dentro do arquivo `compose.yaml`.
+
+    !!! warning "Segurança"
+        As credenciais do banco de dados e JWT devem ser passadas via variáveis de ambiente, nunca diretamente no código. Até mesmo para ter credenciais diferentes para cada ambiente (dev, test, prod).
+
+        Ainda, **NUNCA** coloque credenciais no repositório, mesmo que seja um repositório privado. Ou seja, NUNCA coloque um arquivo `.env` no repositório (GitHub).
+
 !!! tip "Documentação"
     A documentação é um dos pontos mais importantes do projeto. Seja criativo e use imagens, gifs, tabelas, etc. Também, se possível, faça uso de  ferramentas:
     
@@ -267,7 +297,7 @@ Você deve subir um cluster EKS e implantar dois PODs, sendo um da aplicação e
 A entrega deverá ser um link do projeto no GitHub, o mesmo do anterior, mas para uma sessão sobre a publicação na AWS, contendo o uma breve explicação e um link para um vídeo, explicando e executando o trabalho entregue.
 
 !!! success "Entrega"
-    O vídeo apresentado deve ter entre 4 e 5 minutos e deve conter:
+    O vídeo apresentado deve ter entre 3 e 5 minutos e **DEVE demonstrar TODOS** os seguintes itens:
 
     - logar na conta e acessar o projeto;
     - explicar o que foi feito e mostrar os componentes do projeto (eks, roles, etc);
@@ -275,7 +305,7 @@ A entrega deverá ser um link do projeto no GitHub, o mesmo do anterior, mas par
       ``` shell
       kubectl get pods
       ```
-    - mostrar o projeto executando na AWS: chamada da API;
+    - mostrar o projeto executando na AWS: chamada da API por um cliente (curl, postman, etc);
 
     No texto deve haver um link para os arquivos de configuração do Kubernetes (arquivos .yaml: deployment.yaml, service.yaml, etcs), repositório do projeto.
 
