@@ -271,6 +271,7 @@ A entrega deverá ser um link do projeto no GitHub, o mesmo do anterior, mas uma
 
     - logar na conta e acessar o projeto;
     - explicar o que foi feito e mostrar os componentes do projeto (eks, roles, etc);
+    - executar o comando `kubectl get pods` e mostrar os pods rodando;
     - mostrar o projeto executando na AWS: chamada da API;
 
 ## Rubrica
