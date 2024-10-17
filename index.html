@@ -339,6 +339,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="AWS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#entrega_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Entrega
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -441,6 +456,21 @@
       AWS
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="AWS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#entrega_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Entrega
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -753,12 +783,20 @@
 </ul>
 </div>
 <h2 id="aws">AWS</h2>
-<p>Após a primeira entrega de algum aluno, a etapa de implementação em AWS será publicada.</p>
-<!-- Após a primeira entrega do projeto, o próximo passo é implantar a aplicação no AWS. A implantação deve ser feita em um EC2. Com load balancer e auto scaling. -->
-<!-- Após a dockerização, o projeto deve ser implantado no AWS. A implantação deve ser feita em um EC2. -->
-
-<!-- ### Entrega -->
-
+<p>O próximo passo é implantar a aplicação no AWS. A implantação deve ser feita utilizando o Elastic Kubernetes Service (EKS). A aplicação deve ser implantada em um cluster EKS.</p>
+<p>O Kubernetes é uma ferramenta de orquestração de contêineres que automatiza a implantação, o dimensionamento e a gestão de aplicações em contêineres. O EKS é um serviço gerenciado que facilita a execução do Kubernetes na AWS.</p>
+<p>Você deve subir um cluster EKS e implantar dois PODs, sendo um da aplicação e outro do banco de dados. A aplicação deve ser capaz de se conectar ao banco de dados e realizar as operações de endpoints da API acima descritas.</p>
+<h3 id="entrega_1">Entrega</h3>
+<p>A entrega deverá ser um link do projeto no GitHub, o mesmo do anterior, mas uma sessão sobre a publicação na AWS, contendo o uma breve explicação no README e um link para um vídeo, explicando e executando o trabalho entregue.</p>
+<div class="admonition success">
+<p class="admonition-title">Entrega</p>
+<p>O vídeo apresentado deve ter entre 4 e 5 minutos e deve conter:</p>
+<ul>
+<li>logar na conta e acessar o projeto;</li>
+<li>explicar o que foi feito e mostrar os componentes do projeto (eks, roles, etc);</li>
+<li>mostrar o projeto executando na AWS: chamada da API;</li>
+</ul>
+</div>
 <h2 id="rubrica">Rubrica</h2>
 <div class="admonition danger">
 <p class="admonition-title">Rubrica</p>
@@ -768,7 +806,7 @@
 <th style="text-align: center;">Etapa</th>
 <th>Critério</th>
 <th style="text-align: center;">Nota</th>
-<th style="text-align: center;"></th>
+<th style="text-align: center;">Observações</th>
 </tr>
 </thead>
 <tbody>
@@ -782,7 +820,7 @@
 <td style="text-align: center;">2</td>
 <td>AWS</td>
 <td style="text-align: center;">+ 1 conceito</td>
-<td style="text-align: center;"></td>
+<td style="text-align: center;">- 2 conceitos se não entregar a etapa do AWS</td>
 </tr>
 <tr>
 <td style="text-align: center;"></td>
@@ -806,6 +844,9 @@
 </li>
 <li id="fn:2">
 <p><a href="https://docs.docker.com/samples/" target="_blank">How to containerize different types of services</a>&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p><span class="twemoji youtube"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305m-317.51 213.508V175.185l142.739 81.205z"/></svg></span> <a href="https://youtu.be/JrT5YV1KMeY" target="_blank">Como criar um cluster Kubernetes na AWS com EKS</a> por <a href="https://github.com/fabricioveronez" target="_blank">Fabricio Veronez</a>&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
