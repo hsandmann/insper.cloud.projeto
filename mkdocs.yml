@@ -5,7 +5,6 @@ site_url: https://hsandmann.github.io/insper.cloud.projeto
 theme:
   name: material
   features:
-  
     - content.code.copy
     - content.code.select
     - content.code.annotate
