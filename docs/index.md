@@ -281,6 +281,8 @@ A entrega deverá ser um link do projeto no GitHub, contendo o código da API e 
 
         **NUNCA** coloque credenciais no repositório, mesmo que seja um repositório privado. Ou seja, NUNCA coloque um arquivo `.env` no repositório (GitHub).
 
+        **NUNCA** deixe portas expostas em produção, a menos que seja estritamente necessário.
+
 !!! tip "Documentação"
     A documentação é um dos pontos mais importantes do projeto. Seja criativo e use imagens, gifs, tabelas, etc. Também, se possível, faça uso de  ferramentas:
     
