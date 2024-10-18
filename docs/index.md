@@ -197,7 +197,7 @@ flowchart LR
   end
 ```
 
-A aplicação deve ser autocontida, ou seja, deve ser possível executar a aplicação apenas com o comando `docker compose up`.
+A aplicação deve ser autocontida, ou seja, deve ser possível executar a aplicação apenas com o comando `docker compose up` - pois isso é parte essencial da entrega.
 
 
 <!-- termynal -->
@@ -245,8 +245,10 @@ A entrega deverá ser um link do projeto no GitHub, contendo o código da API e 
     - explicação de como executar a aplicação;
     - documentação dos endpoints da API;
     - screenshot com os endpoints testados;
-    - video de execução da aplicação - de até 1 minuto.
-    - link para o docker hub do projeto.
+    - video de execução da aplicação - de até 1 minuto;
+    - link para o docker hub do projeto;
+    - referência explícita a localização do arquivo `compose.yaml`;
+    - o arquivo `compose.yaml` FINAL (entregue) deve ser consumir apenas images do docker hub, ou seja, não deve ter build dentro dele.
 
 !!! note "Variáveis de Ambiente"
     As credenciais do banco de dados e JWT devem ser passadas via variáveis de ambiente, por um arquivo `.env`. Todavia, **PARA FACILITAR A CORREÇÃO**, as credenciais podem ser passadas diretamente no `compose.yaml` por valores padrões, para que não tenha que haver um arquivo de variáveis de ambiente. Exemplo:
