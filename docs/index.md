@@ -304,7 +304,7 @@ Você deve subir um cluster EKS e implantar dois PODs, sendo um da aplicação e
 A entrega deverá ser um link do projeto no GitHub, o mesmo do anterior, mas para uma sessão sobre a publicação na AWS, contendo o uma breve explicação e um link para um vídeo, explicando e executando o trabalho entregue.
 
 !!! success "Entrega"
-    O vídeo apresentado deve ter entre 3 e 5 minutos e **DEVE demonstrar TODOS** os seguintes itens:
+    O vídeo apresentado deve ter entre 2 e 3 minutos e **DEVE demonstrar TODOS** os seguintes itens:
 
     - logar na conta e acessar o projeto;
     - explicar o que foi feito e mostrar os componentes do projeto (eks, roles, etc);
