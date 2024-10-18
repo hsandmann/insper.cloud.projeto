@@ -742,7 +742,7 @@
     App --&gt; Postgres
     Postgres --&gt; App
   end</code></pre>
-<p>A aplicação deve ser autocontida, ou seja, deve ser possível executar a aplicação apenas com o comando <code>docker compose up</code>.</p>
+<p>A aplicação deve ser autocontida, ou seja, deve ser possível executar a aplicação apenas com o comando <code>docker compose up</code> - pois isso é parte essencial da entrega.</p>
 <div class="termy" data-termynal data-ty-macos data-ty-title="bash"><span data-ty="input" data-ty-prompt="&gt;">docker compose up -d</span><span data-ty>[+] Running 2/2<br> ✔ Container database   Started   0.3s<br> ✔ Container app        Started   0.5s<br></span><span data-ty="input" data-ty-prompt="&gt;">docker compose ps</span><span data-ty>NAME           SERVICE       STATUS     PORTS<br>app            app           Up         0.0.0.0:8080-&gt;8080/tcp<br>database       postgres      Up<br></span></div>
 
 <p>Para organização, é sugerida a seguinte estrutura de diretórios:</p>
@@ -770,8 +770,10 @@
 <li>explicação de como executar a aplicação;</li>
 <li>documentação dos endpoints da API;</li>
 <li>screenshot com os endpoints testados;</li>
-<li>video de execução da aplicação - de até 1 minuto.</li>
-<li>link para o docker hub do projeto.</li>
+<li>video de execução da aplicação - de até 1 minuto;</li>
+<li>link para o docker hub do projeto;</li>
+<li>referência explícita a localização do arquivo <code>compose.yaml</code>;</li>
+<li>o arquivo <code>compose.yaml</code> FINAL (entregue) deve ser consumir apenas images do docker hub, ou seja, não deve ter build dentro dele.</li>
 </ul>
 </div>
 <div class="admonition note">
