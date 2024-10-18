@@ -248,7 +248,7 @@ A entrega deverá ser um link do projeto no GitHub, contendo o código da API e 
     - video de execução da aplicação - de até 1 minuto;
     - link para o docker hub do projeto;
     - referência explícita a localização do arquivo `compose.yaml`;
-    - o arquivo `compose.yaml` FINAL (entregue) deve ser consumir apenas images do docker hub, ou seja, não deve ter `build` dentro dele.
+    - o arquivo `compose.yaml` FINAL (entregue) deve utilizar apenas images do docker hub (inclusive as geradas para a api), ou seja, não deve ter `build` dentro dele.
 
 !!! note "Variáveis de Ambiente"
     As credenciais do banco de dados e JWT devem ser passadas via variáveis de ambiente, por um arquivo `.env`. Todavia, **PARA FACILITAR A CORREÇÃO**, as credenciais podem ser passadas diretamente no `compose.yaml` por valores padrões, para que não tenha que haver um arquivo de variáveis de ambiente. Exemplo:
