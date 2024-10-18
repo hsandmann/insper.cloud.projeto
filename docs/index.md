@@ -249,7 +249,7 @@ A entrega deverá ser um link do projeto no GitHub, contendo o código da API e 
     - link para o docker hub do projeto.
 
 !!! note "Variáveis de Ambiente"
-    As credenciais do banco de dados e JWT devem ser passadas via variáveis de ambiente, por um arquivo `.env`. Todavia, para facilitar a correção, as credenciais podem ser passadas diretamente no `compose.yaml` por valores padrões, para que não tenha que haver um arquivo de variáveis de ambiente. Exemplo:
+    As credenciais do banco de dados e JWT devem ser passadas via variáveis de ambiente, por um arquivo `.env`. Todavia, **PARA FACILITAR A CORREÇÃO**, as credenciais podem ser passadas diretamente no `compose.yaml` por valores padrões, para que não tenha que haver um arquivo de variáveis de ambiente. Exemplo:
 
     ``` { .yaml title="compose.yaml" }
     name: app
