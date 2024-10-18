@@ -249,7 +249,7 @@ A entrega deverá ser um link do projeto no GitHub, contendo o código da API e 
     - link para o docker hub do projeto.
 
 !!! note "Variáveis de Ambiente"
-    As credenciais do banco de dados e JWT devem ser passadas via variáveis de ambiente, por um arquivo `.env`. Todavia, para facilitar a correção, as credenciais podem ser passadas diretamente no `compose.yaml` por valores padrões, caso não haja uma variável de ambiente. Exemplo:
+    As credenciais do banco de dados e JWT devem ser passadas via variáveis de ambiente, por um arquivo `.env`. Todavia, para facilitar a correção, as credenciais podem ser passadas diretamente no `compose.yaml` por valores padrões, para que não tenha que haver um arquivo de variáveis de ambiente. Exemplo:
 
     ``` { .yaml title="compose.yaml" }
     name: app
@@ -274,9 +274,9 @@ A entrega deverá ser um link do projeto no GitHub, contendo o código da API e 
     Ao executar, o docker compose irá utilizar as variáveis de ambiente do arquivo `.env`, caso existam, senão, utilizará os valores padrões definidos já dentro do arquivo `compose.yaml`.
 
     !!! warning "Segurança"
-        As credenciais do banco de dados e JWT devem ser passadas via variáveis de ambiente, nunca diretamente no código. Até mesmo para ter credenciais diferentes para cada ambiente (dev, test, prod).
+        Num ambiente de trabalho, as credenciais do banco de dados e JWT devem ser passadas via variáveis de ambiente, nunca diretamente no código. Essa estratégia viabiliza, até mesmo, que hajam credenciais diferentes para cada ambiente (dev, test, prod).
 
-        Ainda, **NUNCA** coloque credenciais no repositório, mesmo que seja um repositório privado. Ou seja, NUNCA coloque um arquivo `.env` no repositório (GitHub).
+        **NUNCA** coloque credenciais no repositório, mesmo que seja um repositório privado. Ou seja, NUNCA coloque um arquivo `.env` no repositório (GitHub).
 
 !!! tip "Documentação"
     A documentação é um dos pontos mais importantes do projeto. Seja criativo e use imagens, gifs, tabelas, etc. Também, se possível, faça uso de  ferramentas:
