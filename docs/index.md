@@ -257,13 +257,12 @@ A entrega deverá ser um link do projeto no GitHub, contendo o código da API e 
         db:
             image: postgres:17
             environment:
-                POSTGRES_DB: ${POSTGRES_DB:projeto} # (1)!
-                POSTGRES_USER: ${POSTGRES_USER:projeto}
-                POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:projeto}
+                POSTGRES_DB: ${POSTGRES_DB:-projeto} # (1)!
+                POSTGRES_USER: ${POSTGRES_USER:-projeto}
+                POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-projeto}
     ```
 
-    1.  Caso a variável de ambiente `POSTGRES_DB` não exista, não seja definida no arquivo `.env`, o valor padrão será `projeto`.
-
+    1.  Caso a variável de ambiente `POSTGRES_DB` não exista ou seja nula - não seja definida no arquivo `.env` - o valor padrão será `projeto`. Vide [documentação](https://docs.docker.com/reference/compose-file/interpolation/){target='_blank'}.
 
     ``` { .env title=".env" }
     POSTGRES_DB=superprojeto
