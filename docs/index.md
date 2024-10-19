@@ -269,7 +269,7 @@ A entrega deverá ser um link do projeto no GitHub, contendo o código da API e 
 
     1.  Caso a variável de ambiente `POSTGRES_DB` não exista ou seja nula - não seja definida no arquivo `.env` - o valor padrão será `projeto`. Vide [documentação](https://docs.docker.com/reference/compose-file/interpolation/){target='_blank'}.
 
-    2. Aqui é feito um túnel para a porta 5432 do container do banco de dados, para a porta 5432 do host (no caso localhost). Em um ambiente de produção, essa porta não deve ser exposta, pois ninguém de fora do compose deveria acessar o banco de dados diretamente.
+    2. Aqui é feito um túnel da porta 5432 do container do banco de dados para a porta 5432 do host (no caso localhost). Em um ambiente de produção, essa porta não deve ser exposta, pois ninguém de fora do compose deveria acessar o banco de dados diretamente.
 
     ``` { .env title=".env" }
     POSTGRES_DB=superprojeto
