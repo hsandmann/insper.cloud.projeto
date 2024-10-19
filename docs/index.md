@@ -333,7 +333,7 @@ A entrega deverá ser um link do projeto no GitHub, o mesmo do anterior, mas par
 
 ## Anexos
 
-### Docker: material de aula
+### Docker compose: material de aula
 
 ``` tree title="estrutura para dois containers num mesmo compose"
 api
@@ -345,20 +345,59 @@ web
 compose.yaml
 ```
 
-=== "api"
 
-    ``` dockerfile
+=== "./"
 
+    ``` { .env title='.env' .copy .select linenums='1' }
+    --8<-- "https://github.com/hsandmann/insper.cloud.projeto/raw/refs/heads/main/samples/dockercompose/.env"
     ```
 
-=== "web"
+    ``` { .yaml title='compose.yaml' .copy .select linenums='1' }
+    --8<-- "https://github.com/hsandmann/insper.cloud.projeto/raw/refs/heads/main/samples/dockercompose/compose.yaml"
+    ```
 
-``` { .yaml title="compose.yaml" }
+=== "./api"
+
+    ``` { .dockerfile title='Dockerfile' .copy .select linenums='1' }
+    --8<-- "https://github.com/hsandmann/insper.cloud.projeto/raw/refs/heads/main/samples/dockercompose/api/Dockerfile"
+    ```
+
+=== "./web"
+
+    ``` { .dockerfile title='Dockerfile' .copy .select linenums='1' }
+    --8<-- "https://github.com/hsandmann/insper.cloud.projeto/raw/refs/heads/main/samples/dockercompose/web/Dockerfile"
+    ```
+
+    ``` { .txt title='hello.txt' .copy .select linenums='1' }
+    --8<-- "https://github.com/hsandmann/insper.cloud.projeto/raw/refs/heads/main/samples/dockercompose/web/hello.txt"
+    ```
+
+#### Executando o docker compose
+
+<!-- termynal -->
+
+``` .shell
+> docker compose up -d --build
+[+] Running 4/4
+ ✔ Container projeto-api-1  Running       0.0s 
+ ✔ Container projeto-api-2  Running       0.0s 
+ ✔ Container projeto-api-3  Running       0.0s 
+ ✔ Container projeto-web-1  Started  
 ```
 
-``` { .env title=".env" }
-```
+#### Parando o docker compose
 
+<!-- termynal -->
+
+``` .shell
+> docker compose down         
+[+] Running 5/5
+ ✔ Container projeto-web-1  Removed     0.2s 
+ ✔ Container projeto-api-1  Removed    10.5s 
+ ✔ Container projeto-api-2  Removed    10.4s 
+ ✔ Container projeto-api-3  Removed    10.5s 
+ ✔ Network projeto_default  Removed 
+```
 
 ## Referências
 
