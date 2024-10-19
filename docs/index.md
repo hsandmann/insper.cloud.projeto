@@ -224,6 +224,7 @@ app
   requirements.txt
   ...
 compose.yaml
+.env
 ```
 
 ### Publicação no Docker Hub
@@ -328,6 +329,35 @@ A entrega deverá ser um link do projeto no GitHub, o mesmo do anterior, mas par
 
 !!! tip "Ponto extra"
     Se a primeira etapa for entregue até o dia 25.out, o aluno ganha meio conceito extra na nota final, ou seja, se ele tirar C, fica com C+.
+
+
+## Anexos
+
+### Docker: material de aula
+
+``` tree title="estrutura para dois containers num mesmo compose"
+api
+  Dockerfile
+web
+  Dockerfile
+  hello.txt
+.env
+compose.yaml
+```
+
+=== "api"
+
+    ``` dockerfile
+
+    ```
+
+=== "web"
+
+``` { .yaml title="compose.yaml" }
+```
+
+``` { .env title=".env" }
+```
 
 
 ## Referências

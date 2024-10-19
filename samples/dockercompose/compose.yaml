@@ -1,0 +1,19 @@
+name: projeto
+
+services:
+  
+  api:
+    build:
+      context: ./api
+    environment:
+      - MINHA_VARIAVEL=${MINHA_SENHA:-projeto}
+    deploy:
+      replicas: 3
+
+  web:
+    build:
+      context: ./web
+    ports:
+      - 8080:80
+    depends_on:
+      - api
