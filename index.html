@@ -892,7 +892,7 @@
 <p>Caso a variável de ambiente <code>POSTGRES_DB</code> não exista ou seja nula - não seja definida no arquivo <code>.env</code> - o valor padrão será <code>projeto</code>. Vide <a href="https://docs.docker.com/reference/compose-file/interpolation/" target="_blank">documentação</a>.</p>
 </li>
 <li>
-<p>Aqui é feito um túnel para a porta 5432 do container do banco de dados, para a porta 5432 do host (no caso localhost). Em um ambiente de produção, essa porta não deve ser exposta, pois ninguém de fora do compose deveria acessar o banco de dados diretamente.</p>
+<p>Aqui é feito um túnel da porta 5432 do container do banco de dados para a porta 5432 do host (no caso localhost). Em um ambiente de produção, essa porta não deve ser exposta, pois ninguém de fora do compose deveria acessar o banco de dados diretamente.</p>
 </li>
 </ol>
 <div class="language-text highlight"><span class="filename">.env</span><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>POSTGRES_DB=superprojeto
